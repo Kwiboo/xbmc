@@ -20,7 +20,7 @@ extern "C"
 }
 
 CVideoBufferDMA::CVideoBufferDMA(IVideoBufferPool& pool, int id, uint32_t fourcc, uint64_t size)
-  : CVideoBufferDRMPRIMEFFmpeg(pool, id),
+  : CVideoBufferDRMPRIME(id),
     m_bo(CBufferObject::GetBufferObject(true)),
     m_fourcc(fourcc),
     m_size(size)
