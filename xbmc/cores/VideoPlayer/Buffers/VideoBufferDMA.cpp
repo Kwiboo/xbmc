@@ -19,7 +19,7 @@ extern "C"
 #include <libavutil/pixdesc.h>
 }
 
-CVideoBufferDMA::CVideoBufferDMA(IVideoBufferPool& pool, int id, uint32_t fourcc, uint64_t size)
+CVideoBufferDMA::CVideoBufferDMA(int id, uint32_t fourcc, uint64_t size)
   : CVideoBufferDRMPRIME(id),
     m_bo(CBufferObject::GetBufferObject(true)),
     m_fourcc(fourcc),

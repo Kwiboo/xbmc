@@ -72,7 +72,7 @@ protected:
 class CVideoBufferDRMPRIMEFFmpeg : public CVideoBufferDRMPRIME
 {
 public:
-  CVideoBufferDRMPRIMEFFmpeg(IVideoBufferPool& pool, int id);
+  CVideoBufferDRMPRIMEFFmpeg(int id);
   ~CVideoBufferDRMPRIMEFFmpeg() override;
   void SetRef(AVFrame* frame);
   void Unref();

@@ -94,7 +94,7 @@ CVideoBufferDRMPRIME::CVideoBufferDRMPRIME(int id) : CVideoBuffer(id)
   m_pixFormat = AV_PIX_FMT_DRM_PRIME;
 }
 
-CVideoBufferDRMPRIMEFFmpeg::CVideoBufferDRMPRIMEFFmpeg(IVideoBufferPool& pool, int id)
+CVideoBufferDRMPRIMEFFmpeg::CVideoBufferDRMPRIMEFFmpeg(int id)
   : CVideoBufferDRMPRIME(id)
 {
   m_pFrame = av_frame_alloc();
@@ -181,7 +181,7 @@ CVideoBuffer* CVideoBufferPoolDRMPRIMEFFmpeg::Get()
   else
   {
     int id = m_all.size();
-    buf = new CVideoBufferDRMPRIMEFFmpeg(*this, id);
+    buf = new CVideoBufferDRMPRIMEFFmpeg(id);
     m_all.push_back(buf);
     m_used.push_back(id);
   }
